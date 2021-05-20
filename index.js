@@ -11,9 +11,11 @@ function FahrtoCelc(fahrenheit){
         if(isNaN(tempFar) === true){
            tempFar =  JSON.stringify(tempFar)
             console.log (ErrMsg)
+            return tempFar
         }
         else{
             console.log(result)
+            return tempFar
         }
         
     }
@@ -21,10 +23,12 @@ function FahrtoCelc(fahrenheit){
     else if(Array.isArray(tempFar)){
         JSON.stringify(tempFar);
         console.log(ErrMsg)
+        return tempFar
     }
 
     else if(typeof tempFar === "object"){
         console.log(ErrMsg)
+        return tempFar
     }
 
     else if(typeof tempFar === "boolean"){
@@ -34,13 +38,17 @@ function FahrtoCelc(fahrenheit){
 
     else if(typeof tempFar === "number"){
         console.log(result)
+        return tempFar
     }
 
     else if(!tempFar){
         console.log(ErrMsg)
+        return tempFar
     }
 
    
 }
 
-FahrtoCelc("yes");
+console.log(FahrtoCelc("55"));
+console.log(FahrtoCelc("You too sabi"));
+console.log(FahrtoCelc({temp:0}));
